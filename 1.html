@@ -35,17 +35,30 @@
 				<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
 			</div>
 		</nav>
-		<div class="row" id="tarj1">
-			<div class="col s12 m2">
-				<div class="card-panel light-blue">
+		<div class="row" id="tarj1">div 1
+			<div class="col s12 m2">div 2
+				<div class="card-panel light-blue">div 3
 					<i class="close material-icons white-text right" onclick="dsp('tarj1')">close</i>
 					<span class="white-text">
 					</span>
+					<br>
+					<div class="input-field col s6">
+          	<input placeholder="Escribe Aqui" id="first_name" type="text" class="validate">
+          	<label for="first_name">Nombre:</label>
+        	</div>
+					<div class="input-field col s6">
+          	<input placeholder="Escribe Aqui" id="second_name" type="text" class="validate">
+          	<label for="second_name">Apellido:</label>
+        	</div>
+					<div class="input-field col s6">
+          	<input placeholder="Escribe Aqui" id="cell_number" type="text" class="validate">
+          	<label for="cell_number">Telefono</label>
+        	</div>
+					<br><br><br><br>
 					<div class="card-action">
-						<a href="http://www.google.com" class="white-text">+</a>
+						<button class="chip" onclick="Materialize.toast('Contacto Creado', 4000)">Crear Contacto</button>
 						<br>
-						<div class="chip">
-							Tag
+						<div class="chip">Tag
 							<i class="close material-icons">close</i>
 						</div>
 					</div>
@@ -69,19 +82,18 @@
 				</div>
 			</div>
 		</div>
-		</div>
-	</div>
 
-<a href="http://www.google.com" class="white-text">+</a>
+		<a href="http://www.google.com" class="white-text">+</a>
 
-
-
-</body>
-<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-<script type="text/javascript">  
-	function dsp(idd) {
-		document.getElementById(idd).style.visibility = "hidden"; 
-	}  
-
-</script> 
+	</body>
+	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript">    
+		function dsp(idd) {
+			document.getElementById(idd).style.visibility = "hidden"; 
+		}  
+		
+		var nombre = document.getElementById("idnombre").value;
+		var apellido = document.getElementById("idapellido").value;
+		var telefono = document.getElementById("idtelefono").value;
+	</script> 
 </html>
