@@ -16,33 +16,39 @@
   <nav class="light-blue lighten-1" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">C Manager</a>
       <ul class="right hide-on-med-and-down">
-          <li class='dropdown-button btn waves-effect waves-light blue' href='#' data-activates='dropdown1'>Drop It!</li>
+        <li class='dropdown-button btn waves-effect waves-light blue' href='#' data-activates='dropdown1'>Drop It!</li>
 
-  <!-- Dropdown Structure -->
-  <ul id='dropdown1' class='dropdown-content'>
-    <li><button class="btn-large waves-effect waves-light blue" id="btn-uno">uno</button></li>
-    <li class="divider"></li>
-    <li><button class="btn-large waves-effect waves-light blue" id="btn-dos">dos</button></li>
-    <li class="divider"></li>
-    <li><button class="btn-large waves-effect waves-light blue" id="btn-tres">tres</button></li>
-    <li class="divider"></li>
-  </ul>
+        <!-- Dropdown Structure -->
+        <ul id='dropdown1' class='dropdown-content'>
+          <li><button class="btn-large waves-effect waves-light blue" id="btn-uno">uno</button></li>
+          <li class="divider"></li>
+          <li><button class="btn-large waves-effect waves-light blue" id="btn-dos">dos</button></li>
+          <li class="divider"></li>
+          <li><button class="btn-large waves-effect waves-light blue" id="btn-tres">tres</button></li>
+          <li class="divider"></li>
+        </ul>
       </ul>
 
       <ul id="nav-mobile" class="side-nav">
-      
+
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
   </nav>
-  <div class="row">
+  <div class="row" id="tarj1">
     <div class="col s12 m2">
       <div class="card-panel light-blue">
-        <span class="white-text">Hola
+        <i class="close material-icons white-text right" onclick="dsp(tarj1)" >close</i>
+        <span class="white-text">
         </span>
-      <div class="card-action">
-      <a href="http://www.google.com" class="btn waves-effect waves-light blue">Soy un link</a>
-      </div>
+        <div class="card-action">
+          <a href="http://www.google.com" class="white-text">+</a>
+          <br>
+          <div class="chip">
+            Tag
+            <i class="close material-icons">close</i>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -54,6 +60,13 @@
 
 
 
+
 </body>
-<script type="text/javascript"></script>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript">  
+function dsp(idd) {
+   document.getElementById(idd).style.visibility = "hidden"; 
+ }  
+
+</script> 
 </html>
