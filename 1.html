@@ -7,6 +7,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<script src="jquery-3.1.1.min.js"></script>
+		<title>Pagina Web</title>
 	</head>
 
 	<body bgcolor="lightblue">
@@ -35,24 +36,27 @@
 				<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
 			</div>
 		</nav>
-		<div class="row" id="tarj1">div 1
-			<div class="col s12 m2">div 2
-				<div class="card-panel light-blue">div 3
+		<div class="right hide-on-med-and-down">
+			<a href="index.html" id="download-button" class="btn-large waves-effect waves-light blue">Volver al Inicio</a>
+		</div>
+		
+		<div class="row" id="tarj1"><!--Tarjeta 1-->
+			<div class="col s4">
+				<div class="card-panel light-blue">Tarjeta: 1
 					<i class="close material-icons white-text right" onclick="dsp('tarj1')">close</i>
-					<span class="white-text">
-					</span>
+					<span class="white-text"></span>
 					<br>
 					<div class="input-field col s6">
-          	<input placeholder="Escribe Aqui" id="first_name" type="text" class="validate">
-          	<label for="first_name">Nombre:</label>
+          	<input placeholder="Escribe Aqui" id="idnombre1" type="text" class="validate">
+          	<label for="idnombre1">Nombre:</label>
         	</div>
 					<div class="input-field col s6">
-          	<input placeholder="Escribe Aqui" id="second_name" type="text" class="validate">
-          	<label for="second_name">Apellido:</label>
+          	<input placeholder="Escribe Aqui" id="idapellido1" type="text" class="validate">
+          	<label for="idapellido1">Apellido:</label>
         	</div>
 					<div class="input-field col s6">
-          	<input placeholder="Escribe Aqui" id="cell_number" type="text" class="validate">
-          	<label for="cell_number">Telefono</label>
+          	<input placeholder="Escribe Aqui" id="idtelefono1" type="text" class="validate">
+          	<label for="idtelefono1">Telefono</label>
         	</div>
 					<br><br><br><br>
 					<div class="card-action">
@@ -65,17 +69,30 @@
 				</div>
 			</div>
 		</div>
-		<div class="row" id="tarj2">
-			<div class="col s12 m2">
-				<div class="card-panel light-blue">
-					<i class="close material-icons white-text right" onclick="dsp('tarj2')">close</i>
-					<span class="white-text">
-					</span>
+		<br><hr>
+		<div class="row" id="tarj2"><!--Tarjeta 2-->
+			<div class="col s4">
+				<div class="card-panel light-blue">Tarjeta: 2
+					<i class="close material-icons white-text right" onclick="dsp('tarj1')">close</i>
+					<span class="white-text"></span>
+					<br>
+					<div class="input-field col s6">
+          	<input placeholder="Escribe Aqui" id="idnombre2" type="text" class="validate">
+          	<label for="idnombre2">Nombre:</label>
+        	</div>
+					<div class="input-field col s6">
+          	<input placeholder="Escribe Aqui" id="idapellido2" type="text" class="validate">
+          	<label for="idapellido2">Apellido:</label>
+        	</div>
+					<div class="input-field col s6">
+          	<input placeholder="Escribe Aqui" id="idtelefono2" type="text" class="validate">
+          	<label for="idtelefono2">Telefono</label>
+        	</div>
+					<br><br><br><br>
 					<div class="card-action">
-						<a href="http://www.google.com" class="white-text">+</a>
+						<button class="chip" onclick="Materialize.toast('Contacto Creado', 4000)">Crear Contacto</button>
 						<br>
-						<div class="chip">
-							Tag
+						<div class="chip">Tag
 							<i class="close material-icons">close</i>
 						</div>
 					</div>
@@ -92,8 +109,12 @@
 			document.getElementById(idd).style.visibility = "hidden"; 
 		}  
 		
-		var nombre = document.getElementById("idnombre").value;
-		var apellido = document.getElementById("idapellido").value;
-		var telefono = document.getElementById("idtelefono").value;
+		var nombre1 = document.getElementById("idnombre1").value;
+		var apellido1 = document.getElementById("idapellido1").value;
+		var telefono1 = document.getElementById("idtelefono1").value;
+		
+		var nombre2 = document.getElementById("idnombre2").value;
+		var apellido2 = document.getElementById("idapellido2").value;
+		var telefono2 = document.getElementById("idtelefono2").value;
 	</script> 
 </html>
