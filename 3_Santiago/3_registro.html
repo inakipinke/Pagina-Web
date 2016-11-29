@@ -72,19 +72,35 @@
 				</div>
 			</div>
 			<div class="row center">
-				<a href="4_primeraPagina.html" id="download-button" class="btn-large waves-effect waves-light blue">Registrarse</a>
+				<button onclick="crearUsuario();" id="download-button" class="btn-large waves-effect waves-light blue">Registrarse</button>
+				<a href="4_primeraPagina.html" id="download-button" class="btn-large waves-effect waves-light blue">Pasar</a>
 			</div>
 		</div>
 	</body>
 	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-	<script type="text/javascript">    
+	<script type="text/javascript"></script>
+	<script>
+		clean();
 		
-		var nombreR = document.getElementById("nombre_R").value;
-		var apellidoR = document.getElementById("apellido_R").value;
-		var emailR = document.getElementById("email_R").value;
-		var usuarioR = document.getElementById("usuario_R").value;
-		var contraseñaR = document.getElementById("contraseña_R").value;
-		var telefonoR = document.getElementById("telefono_R").value;
+		function clean(){/*Funcion para borrar las cosas escritas en los inputs, asi es mas limpio*/
+			document.getElementById("nombre_R").value = "";
+			document.getElementById("apellido_R").value = "";
+			document.getElementById("email_R").textContent = "";
+			document.getElementById("usuario_R").textContent = "";
+			document.getElementById("contraseña_R").value= "";
+			document.getElementById("telefono_R").textContent = "";			
+		}
 		
+		function crearUsuario(){
+			var nombreR = document.getElementById("nombre_R").value;
+			var apellidoR = document.getElementById("apellido_R").value;
+			var emailR = document.getElementById("email_R").value;
+			var usuarioR = document.getElementById("usuario_R").value;
+			var contraseñaR = document.getElementById("contraseña_R").value;
+			var telefonoR = document.getElementById("telefono_R").value;
+			
+			/*Codigo para cargar los datos*/
+			console.log(nombreR);
+		}
 	</script> 
 </html>

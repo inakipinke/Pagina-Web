@@ -4,9 +4,11 @@
 
 		<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css"><!--Esto estaba en el codigo de javi, lo añado-->
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<script src="jquery-3.1.1.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script><!--Esto estaba en el codigo de javi, lo añado-->
 		<title>Pagina 1</title>
 	</head>
 
@@ -43,65 +45,89 @@
 		<div class="right hide-on-med-and-down">
 			<a href="1_index.html" id="download-button" class="btn-large waves-effect waves-light blue">Cerrar Sesion</a>
 		</div>
+
 		
-		<div class="row" id="tarj1"><!--Tarjeta 1-->
-			<div class="col s4">
-				<div class="card-panel light-blue">
-					<i class="close material-icons white-text right" onclick="dsp('tarj1')">close</i>
-					<span class="white-text"></span>
-					<br>
-					<div class="input-field col s6">
-          	<input placeholder="Escribe Aqui" id="nombre" type="text" class="validate">
-          	<label for="nombre">Nombre:</label>
-        	</div>
-					<div class="input-field col s6">
-          	<input placeholder="Escribe Aqui" id="apellido" type="text" class="validate">
-          	<label for="apellido">Apellido:</label>
-        	</div>
-					<div class="input-field col s6">
-          	<input placeholder="Escribe Aqui" id="telefono" type="text" class="validate">
-          	<label for="telefono">Telefono</label>
-        	</div>
-					<div class="input-field col s6">
-          	<input placeholder="Escribe Aqui" id="email" type="text" class="validate">
-          	<label for="email">Email</label>
-        	</div>
-					<br><br><br><br>
-					<div class="card-action">
-						<button class="chip" onclick="Materialize.toast('Contacto Creado', 4000);crearContacto();">Crear Contacto</button>
-						<br>
-						<div class="chip">Tag
-							<i class="close material-icons">close</i>
-						</div>
-					</div>
+		<div id='tarjeta' class="row"><!--Tarjeta de Javi-->
+
+			<div class="col s4 card blue white-text">
+				<div class= "input-field col s5">
+					<input type="text" placeholder="Numero de Tarjeta: " id="numero"/>
+				</div><br><br><br><br>
+				<div class="col s6 black-text">
+					<input type="text" placeholder="Nombre: " id="nombre_T"/>
 				</div>
+				<div class="col s6 black-text">
+					<input type="text" placeholder="Apellido: " id="apellido_T"/>
+				</div><br><br><br><br>
+				<div class="col s6 black-text">
+					<input type="text" placeholder="Email: " id="email_T"/>
+				</div>
+				<div class="col s6 black-text">
+					<input type="text" placeholder="Telefono: " id="telefono_T"/>
+				</div><br>
+
+				<div class="col s2 offset-s10">
+					<button class="chip" onclick="crearTarjeta();crearContacto();Materialize.toast('Contacto N° + numero + Creado: + nombre + apellido', 4000);">Crear</button>
+				</div>
+			
 			</div>
+			
+			<div id='tarjetas' class="row"></div>
+		
 		</div>
 
 		<a href="http://www.google.com" class="white-text">+</a>
 
 	</body>
 	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-	<script type="text/javascript">    
+	<script type="text/javascript">   
+		clean();
 		
-		function dsp(idd) {
+		function dsp(idd) {/*Funcion para esconder las cosas*/
 			document.getElementById(idd).style.visibility = "hidden"; 
 		}
 		
-		function crearContacto(){
-			var nombre = document.getElementById("nombre").value,
-			apellido = document.getElementById("apellido").value,
-			telefono = document.getElementById("telefono").value,
-			email = document.getElementById("email").value;
+		function clean(){/*Funcion para borrar las cosas escritas en los inputs, asi es mas limpio*/
+			var nada = "";
+			document.getElementById("nombre_T").value = nada;
+			document.getElementById("apellido_T").value = nada;
+			document.getElementById("email_T").value = nada;
+			document.getElementById("telefono_T").value = nada;
+					
+		}
+		
+		function crearTarjeta(){/*Funcion de Javi, crea la tarjeta con los datos que ingrese*/
+			var html = "<div id='tarjeta_creada' class='col s4'>";
+			html += "<div class='card green darken-1'> <div class='card-content white-text'><span class='card-title'>Contacto N° "+ $("#numero_T").val() +"</span>";
+			html += "<p> Nombre: "+ $("#nombre_T").val() +"</p>";
+			html += "<p> Apellido: "+ $("#apellido_T").val() +"</p>";
+			html += "<p> Email: "+ $("#email_T").val() +"</p>";
+			html += "<p> Telefono: "+ $("#telefono_T").val() +"</p>";
+			html += "</div></div></div>";
+
+			var div = $("#tarjetas").append(html);
+			$("#numero").val("");
+			$("#nombre").val("");
+			clean();
+		}
+		
+		function crearContacto(){/*ESta funcion seria para cargar los datos a la base de datos*/
+			var nombre = document.getElementById("nombre_T").value,
+			apellido = document.getElementById("apellido_T").value,
+			telefono = document.getElementById("telefono_T").value,
+			email = document.getElementById("email_T").value;
 						
 			/*Aca va el codigo para cargar las variables a la base de datos*/
 			
 			var nombre = undefined,
 			apellido = undefined,
 			telefono = undefined,
-			email = undefined;
-			
-			document.getElementById("nombre").textContent=""
+			email = undefined;/*Hago esto ultimo porque creo que si creo las variables con los datos, y los cargo, despues los tengo que borrar para cargar nuevos datos*/
+		}
+		
+		function borrar(){
+			var elem = document.getElementById("tarjeta_creada");
+			elem.remove();
 		}
 		
 	</script> 
