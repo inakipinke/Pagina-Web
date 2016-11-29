@@ -46,7 +46,7 @@
 						</div>
 						<div class="row">
 							<div class="input-field col s12">
-								<input id="mailR" type="text" class="validate">
+								<input id="email_R" type="text" class="validate">
 								<label for="email_R">Correo Electronico</label>
 							</div>
 						</div>
@@ -73,7 +73,7 @@
 			</div>
 			<div class="row center">
 				<button onclick="crearUsuario();" id="download-button" class="btn-large waves-effect waves-light blue">Registrarse</button>
-				<a href="4_primeraPagina.html" id="download-button" class="btn-large waves-effect waves-light blue">Pasar</a>
+				<a href="4_primeraPagina.html" id="download-button" class="btn-large waves-effect waves-light blue">Pasar (temporal)</a>
 			</div>
 		</div>
 	</body>
@@ -83,15 +83,20 @@
 		clean();
 		
 		function clean(){/*Funcion para borrar las cosas escritas en los inputs, asi es mas limpio*/
-			document.getElementById("nombre_R").value = "";
-			document.getElementById("apellido_R").value = "";
-			document.getElementById("email_R").textContent = "";
-			document.getElementById("usuario_R").textContent = "";
-			document.getElementById("contraseña_R").value= "";
-			document.getElementById("telefono_R").textContent = "";			
+			var nada = "";
+			document.getElementById("nombre_R").value = nada;
+			document.getElementById("apellido_R").value = nada;
+			document.getElementById("email_R").value = nada;
+			document.getElementById("usuario_R").value = nada;
+			document.getElementById("contraseña_R").value = nada;
+			document.getElementById("telefono_R").value = nada;
+					
 		}
+
 		
 		function crearUsuario(){
+			console.log("SDFGHJ");
+
 			var nombreR = document.getElementById("nombre_R").value;
 			var apellidoR = document.getElementById("apellido_R").value;
 			var emailR = document.getElementById("email_R").value;
@@ -100,7 +105,15 @@
 			var telefonoR = document.getElementById("telefono_R").value;
 			
 			/*Codigo para cargar los datos*/
-			console.log(nombreR);
+
+			nombreR = undefined;
+			apellidoR = undefined;
+			emailR = undefined;
+			usuarioR = undefined;
+			contraseñaR = undefined;
+			telefonoR = undefined;
+			
+			console.log(nombreR + " - " + apellidoR + " - " + emailR + " - " + usuarioR + " - " + contraseñaR + " - " + telefonoR);
 		}
 	</script> 
 </html>
